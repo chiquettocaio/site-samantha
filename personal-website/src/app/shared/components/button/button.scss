@@ -1,4 +1,9 @@
+:host {
+  width: 100%;
+}
+
 button {
+  width: 100%;
   padding: 10px 24px;
   border-radius: 8px;
   background-color: var(--color-accent);
@@ -19,7 +24,7 @@ button {
   }
 
   &.secondary {
-    background-color: hsl(from var(--color-white) h s l / 0.8);
+    background-color: hsl(from var(--color-white) h s l / 0.9);
     color: var(--color-neutral-darkest);
   }
 }
