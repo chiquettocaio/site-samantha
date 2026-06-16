@@ -1,0 +1,9 @@
+<button
+  [class.secondary]="variant() === buttonVariant.SECONDARY"
+  [class.tertiary]="variant() === buttonVariant.TERTIARY"
+  [type]="type()"
+  (click)="clicked.emit()"
+  [ariaLabel]="ariaLabel()"
+>
+  {{ label() }}
+</button>
