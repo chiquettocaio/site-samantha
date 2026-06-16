@@ -3,6 +3,10 @@
 }
 
 button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 10px 24px;
   border-radius: 8px;
@@ -12,7 +16,7 @@ button {
   font-size: var(--font-size-base);
   color: var(--color-white);
   border: none;
-  box-shadow: 0 6px 4px rgb(from var(--color-black) r g b / .25);
+  box-shadow: 0 2px 4px rgb(from var(--color-black) r g b / .25);
   cursor: pointer;
   transition:
     translate .2s ease,
@@ -24,7 +28,26 @@ button {
   }
 
   &.secondary {
-    background-color: hsl(from var(--color-white) h s l / 0.9);
+    background-color: hsl(from var(--color-black) h s calc(l + 95));
     color: var(--color-neutral-darkest);
+  }
+
+  &.tertiary {
+    background: none;
+    color: black;
+    box-shadow: none;
+
+    &:active {
+      box-shadow: unset;
+      translate: initial;
+    }
+  }
+
+  &::ng-deep {
+    [ButtonLeadingIcon],
+    [ButtonTrailingIcon] {
+      width: 18px;
+      height: 18px;
+    }
   }
 }

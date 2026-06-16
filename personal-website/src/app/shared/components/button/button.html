@@ -5,5 +5,7 @@
   (click)="clicked.emit()"
   [ariaLabel]="ariaLabel()"
 >
+  <ng-content select="[ButtonLeadingIcon]" />
   {{ label() }}
+  <ng-content select="[ButtonTrailingIcon]"/>
 </button>
