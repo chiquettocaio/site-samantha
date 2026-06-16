@@ -1,0 +1,11 @@
+@use 'breakpoints' as breakpoints;
+
+:root {
+  --space-section-vertical: 4rem;
+  --space-section-horizontal: 3rem;
+
+  @media screen and (width > breakpoints.$bp-sm) {
+    --space-section-vertical: 6rem;
+    --space-section-horizontal: 6rem;
+  }
+}

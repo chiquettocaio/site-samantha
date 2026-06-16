@@ -1,0 +1,20 @@
+:root {
+  --color-neutral-lightest: #F2F2F2;
+  --color-neutral-lighter: #DADAD9;
+  --color-neutral-light: #B6B5B3;
+  --color-neutral: #868480;
+  --color-neutral-dark: #55524D;
+  --color-neutral-darker: #25211B;
+  --color-neutral-darkest: #0D0902;
+
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  --color-blue: #0d69d1;
+  --color-accent: #28A745;
+  --color-warning: #FDB92F;
+  --color-danger: #E84B4B;
+  --color-pink: #ff42b0;
+
+  --color-text: var(--color-neutral-darkest);
+}
