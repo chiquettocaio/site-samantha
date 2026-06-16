@@ -1,0 +1,126 @@
+<header class="adv-header">
+  <img
+    class="adv-header__logo"
+    ngSrc="images/logo.png"
+    width="90"
+    height="40"
+    sizes="100vw"
+    alt="Logo da Samantha"
+  >
+
+  <nav
+    class="nav-menu"
+    /* (mouseleave)="onNavBlur()" */
+  >
+    <div
+      class="nav-menu__indicator"
+      [style.width.px]="indicatorCoords().w"
+      [style.left.px]="indicatorCoords().x"
+    ></div>
+
+    <ul class="nav-menu__list">
+      <li class="nav-menu__item">
+        <a
+          href="#home"
+          class="nav-menu__link"
+          [class.nav-menu__link--active]="activeIndex() === 1"
+          data-index="1"
+          /* (mouseenter)="onLinkHover($event)" */
+          (click)="onLinkClick($event)"
+        > Home </a>
+      </li>
+
+      <li class="nav-menu__item">
+        <a
+          href="#servicos"
+          class="nav-menu__link"
+          [class.nav-menu__link--active]="activeIndex() === 2"
+          data-index="2"
+          /* (mouseenter)="onLinkHover($event)" */
+          (click)="onLinkClick($event)"
+        > Serviços </a>
+      </li>
+
+      <li class="nav-menu__item">
+        <a
+          href="#duvidas"
+          class="nav-menu__link"
+          [class.nav-menu__link--active]="activeIndex() === 3"
+          data-index="3"
+          /* (mouseenter)="onLinkHover($event)" */
+          (click)="onLinkClick($event)"
+        > Dúvidas </a>
+      </li>
+
+      <li class="nav-menu__item">
+        <a
+          href="#contato"
+          class="nav-menu__link"
+          [class.nav-menu__link--active]="activeIndex() === 4"
+          data-index="4"
+          /* (mouseenter)="onLinkHover($event)" */
+          (click)="onLinkClick($event)"
+        > Contato </a>
+      </li>
+    </ul>
+  </nav>
+
+  <button
+    class="hamburger hamburger--spin"
+    [class.is-active]="isMenuOpen()"
+    type="button"
+    aria-label="Menu"
+    aria-controls="nav-menu"
+    [ariaExpanded]="isMenuOpen()"
+    popovertarget="mobile-nav-menu"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+
+  <nav
+    #mobileNavMenu
+    popover
+    id="mobile-nav-menu"
+    class="mobile-nav-menu"
+    (toggle)="onPopoverToggle($event)"
+
+  >
+    <div class="mobile-nav-menu__drag-handle"></div>
+
+    <ul class="mobile-nav-menu__list">
+      <li class="mobile-nav-menu__item">
+        <a
+          href="#home"
+          class="mobile-nav-menu__link"
+          (click)="closePopover()"
+        > Home </a>
+      </li>
+
+      <li class="mobile-nav-menu__item">
+        <a
+          href="#servicos"
+          class="mobile-nav-menu__link"
+          (click)="closePopover()"
+        > Serviços </a>
+      </li>
+
+      <li class="mobile-nav-menu__item">
+        <a
+          href="#duvidas"
+          class="mobile-nav-menu__link"
+          (click)="closePopover()"
+        > Dúvidas </a>
+      </li>
+
+      <li class="mobile-nav-menu__item">
+        <a
+          href="#contato"
+          class="mobile-nav-menu__link"
+          (click)="closePopover()"
+        > Contato </a>
+      </li>
+    </ul>
+  </nav>
+</header>
