@@ -13,7 +13,7 @@
   background-image: url('/images/hero.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: -500px center;
+  background-position: 83% center;
 
 
   &__title {
@@ -75,7 +75,7 @@
 
 @media screen and (width > breakpoints.$bp-xs) {
   .hero-section {
-    background-position: right center;
+    background-position: 88% center;
 
     &__title {
       width: 410px;
@@ -89,9 +89,10 @@
 
 @media screen and (width > breakpoints.$bp-md) {
   .hero-section {
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-start;
     padding: 24px;
+    background-position: 100% center;
 
     &::before {
       background: linear-gradient(90deg, rgba(0, 0, 0, .8) 0%, rgba(94, 113, 99, 0) 100%);
@@ -111,6 +112,7 @@
   .hero-section-content {
     width: 350px;
     align-items: flex-start;
+    margin-left: 20%;
   }
 
   .hero-section-ctas {
