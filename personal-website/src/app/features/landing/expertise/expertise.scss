@@ -23,7 +23,7 @@
 
   &__title {
     font-family: var(--font-family-lobster);
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-regular);
     color: var(--color-text);
     text-align: center;
@@ -153,6 +153,16 @@
       app-icon {
         display: block;
       }
+    }
+  }
+
+  .expertise-subsection {
+    &__title {
+      font-size: var(--font-size-5xl);
+    }
+
+    &__subtitle {
+      font-size: var(--font-size-lg);
     }
   }
 
