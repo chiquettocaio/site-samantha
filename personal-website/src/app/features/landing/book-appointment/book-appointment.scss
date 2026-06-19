@@ -1,0 +1,77 @@
+@use 'tokens/breakpoints' as breakpoints;
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.line-break {
+  display: block;
+}
+
+.book-appointment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 972px;
+  border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--border-radius-lg);
+  padding: 32px;
+
+  &__title {
+    font-family: var(--font-family-lobster);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-4xl);
+    line-height: 120%;
+    color: var(--color-text);
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    font-family: var(--font-family-cabin);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-base);
+    line-height: 150%;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 310px;
+  }
+}
+
+@media screen and (width > breakpoints.$bp-md) {
+  :host {
+    padding: 0 40px;
+  }
+
+  .book-appointment-section {
+    padding: 48px 16px;
+
+    &__title {
+      max-width: unset;
+      margin-bottom: 24px;
+      font-size: var(--font-size-5xl);
+    }
+
+    &__paragraph {
+      margin-bottom: 32px;
+      font-size: var(--font-size-lg);
+    }
+  }
+}
