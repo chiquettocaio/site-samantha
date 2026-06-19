@@ -1,0 +1,95 @@
+@use 'tokens/breakpoints' as breakpoints;
+
+.line-break {
+  display: block;
+}
+
+.faq-section {
+  display: grid;
+   grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 64px auto;
+  padding: 0 20px;
+  max-width: var(--max-content-width);
+
+  &__title {
+    font-family: var(--font-family-lobster);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-4xl);
+    line-height: 120%;
+    color: var(--color-text);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-family: var(--font-family-cabin);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-base);
+    line-height: 150%;
+    color: var(--color-text);
+    text-align: center;
+  }
+}
+
+.faq {
+  display: grid;
+  gap: 0 48px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(3, auto);
+  margin-top: 48px;
+}
+
+.faq-item {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  place-items: center;
+  place-content: center;
+  place-self: center;
+  margin-bottom: 48px;
+  max-width: 350px;
+  width: 100%;
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: var(--font-family-cabin);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    line-height: 150%;
+    margin-bottom: 12px;
+  }
+
+  &__paragraph {
+    font-family: var(--font-family-cabin);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    line-height: 150%;
+    text-align: center;
+  }
+}
+
+@media screen and (width > breakpoints.$bp-xs) {
+  .faq-item {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (width > breakpoints.$bp-md) {
+  .faq-section {
+    &__title {
+      font-size: var(--font-size-5xl);
+    }
+
+    &__subtitle {
+      font-size: var(--font-size-lg);
+    }
+  }
+}
