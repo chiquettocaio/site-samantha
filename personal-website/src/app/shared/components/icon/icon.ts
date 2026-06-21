@@ -1,7 +1,10 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import {
-  phosphorCaretRight
+  phosphorCaretRight,
+  phosphorEnvelopeSimple,
+  phosphorHeadset,
+  phosphorPhone
 } from '@ng-icons/phosphor-icons/regular'
 
 import {
@@ -20,6 +23,9 @@ import {
   providers: [
     provideIcons({
       phosphorCaretRight,
+      phosphorEnvelopeSimple,
+      phosphorPhone,
+      phosphorHeadset,
 
       customCalendarMonth,
       customCheckedBag,

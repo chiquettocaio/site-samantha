@@ -42,6 +42,7 @@ export class Header implements OnInit {
     const heroSection = this.document.querySelector('#hero-section')
     const expertiseSection = this.document.querySelector('#expertise-section')
     const faqSection = this.document.querySelector('#faq-section')
+    const contactSection = this.document.querySelector('#contact-section')
 
     const scrollSentinel = this.document.querySelector('.scroll-sentinel')
 
@@ -78,6 +79,7 @@ export class Header implements OnInit {
     if (heroSection) observer.observe(heroSection)
     if (expertiseSection) observer.observe(expertiseSection)
     if (faqSection) observer.observe(faqSection)
+    if (contactSection) observer.observe(contactSection)
 
     if (scrollSentinel) observer2.observe(scrollSentinel)
   }
