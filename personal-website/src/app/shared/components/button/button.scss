@@ -3,6 +3,8 @@
 }
 
 button {
+  --button-color: var(--color-accent);
+
   display: flex;
   gap: 8px;
   align-items: center;
@@ -10,7 +12,7 @@ button {
   width: 100%;
   padding: 10px 24px;
   border-radius: 8px;
-  background-color: var(--color-accent);
+  background-color: var(--button-color);
   font-family: var(--font-family-cabin);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-base);
@@ -28,19 +30,27 @@ button {
   }
 
   &.secondary {
-    background-color: hsl(from var(--color-black) h s calc(l + 95));
+    --button-color: hsl(from var(--color-black) h s calc(l + 95));
+
+    background-color: var(--button-color);
     color: var(--color-neutral-darkest);
   }
 
   &.tertiary {
+    --button-color: none;
+
     background: none;
-    color: black;
+    color: var(--color-black);
     box-shadow: none;
 
     &:active {
       box-shadow: unset;
       translate: initial;
     }
+  }
+
+  &:hover {
+    background-color: hsl(from var(--button-color) h s calc(l + 2));
   }
 
   &::ng-deep {

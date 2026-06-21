@@ -148,6 +148,7 @@
     flex-direction: row;
     gap: 8px;
     width: 400px;
+    max-width: unset;
 
     app-button {
       app-icon {

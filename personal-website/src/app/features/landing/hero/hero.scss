@@ -73,6 +73,16 @@
   max-width: 380px;
 }
 
+.scroll-sentinel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  background-color: transparent;
+  z-index: -1;
+}
+
 @media screen and (width > breakpoints.$bp-xs) {
   .hero-section {
     background-position: 88% center;
