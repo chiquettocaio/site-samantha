@@ -49,7 +49,8 @@ export class Header implements OnInit {
     const mapping: Record<string, number> = {
       'hero-section': 1,
       'expertise-section': 2,
-      'faq-section': 3
+      'faq-section': 3,
+      'contact-section': 4
     }
 
     const observerCallback: IntersectionObserverCallback = entries => {

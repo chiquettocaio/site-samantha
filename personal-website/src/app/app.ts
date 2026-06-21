@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { BookAppointment } from './features/landing/book-appointment/book-appointment'
+import { Footer } from './features/landing/components/footer/footer'
 import { Header } from './features/landing/components/header/header'
 import { Contact } from './features/landing/contact/contact'
 import { Expertise } from './features/landing/expertise/expertise'
@@ -14,7 +15,8 @@ import { Hero } from './features/landing/hero/hero'
     Expertise,
     BookAppointment,
     Faq,
-    Contact
+    Contact,
+    Footer
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
