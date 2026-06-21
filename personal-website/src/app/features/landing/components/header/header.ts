@@ -1,15 +1,15 @@
-import { NgOptimizedImage } from '@angular/common'
 import { Component, DOCUMENT, ElementRef, inject, OnInit, signal, viewChild } from '@angular/core'
 
 // TODOCH: either remove or use the commented code
 
 @Component({
   selector: 'app-header',
-  imports: [
-    NgOptimizedImage
-  ],
+  imports: [],
   templateUrl: './header.html',
-  styleUrl: './header.scss'
+  styleUrl: './header.scss',
+  host: {
+    '[class.smaller]': 'smallHeader()'
+  }
 })
 export class Header implements OnInit {
   private readonly document = inject(DOCUMENT)
@@ -17,17 +17,13 @@ export class Header implements OnInit {
   popover = viewChild<ElementRef<HTMLElement>>('mobileNavMenu')
 
   isMenuOpen = signal<boolean>(false)
-  indicatorCoords = signal<{ x: number, w: number }>({ x: 0, w: 71 })
-  activeLinkCoords = signal<{ x: number, w: number }>({ x: 0, w: 0 })
   activeIndex = signal<number>(1)
+  isImperativelyNavigating = signal<boolean>(false)
+  smallHeader = signal<boolean>(false)
 
   ngOnInit (): void {
     this.initIntersectionObserver()
   }
-
-  // ngAfterViewInit (): void {
-  //   this.captureHomeLinkCoords()
-  // }
 
   onPopoverToggle (e: ToggleEvent): void {
     this.isMenuOpen.set(e.newState === 'open')
@@ -37,43 +33,52 @@ export class Header implements OnInit {
     this.popover()?.nativeElement.hidePopover()
   }
 
-  // onLinkHover (e: MouseEvent): void {
-  //   const target = e.target as HTMLElement
-
-  //   this.indicatorCoords.set({
-  //     x: Math.round(target.offsetLeft),
-  //     w: Math.round(target.offsetWidth)
-  //   })
-  // }
-
-  // onNavBlur (): void {
-  //   this.indicatorCoords.set(this.activeLinkCoords())
-  // }
-
-  onLinkClick (e: MouseEvent): void {
-    const target = e.target as HTMLElement
-    const targetIndex = parseInt(target.dataset['index'] ?? '1')
-
-    // this.activeLinkCoords.set({
-    //   x: Math.round(target.offsetLeft),
-    //   w: Math.round(target.offsetWidth)
-    // })
-
-    this.activeIndex.set(targetIndex)
+  activateLink (index: number, viaIntersectionObserver: boolean = false): void {
+    this.activeIndex.set(index)
+    this.isImperativelyNavigating.set(!viaIntersectionObserver)
   }
 
-  // private captureHomeLinkCoords (): void {
-  //   const homeLink = this.document.querySelector('.nav-menu__link--active') as HTMLElement
-
-  //   this.activeLinkCoords.set({
-  //     x: Math.round(homeLink?.offsetLeft),
-  //     w: Math.round(homeLink?.offsetWidth)
-  //   })
-
-  //   this.indicatorCoords.set(this.activeLinkCoords())
-  // }
-
   private initIntersectionObserver (): void {
-    // TODOCH: implement once sections are created
+    const heroSection = this.document.querySelector('#hero-section')
+    const expertiseSection = this.document.querySelector('#expertise-section')
+    const faqSection = this.document.querySelector('#faq-section')
+
+    const scrollSentinel = this.document.querySelector('.scroll-sentinel')
+
+    const mapping: Record<string, number> = {
+      'hero-section': 1,
+      'expertise-section': 2,
+      'faq-section': 3
+    }
+
+    const observerCallback: IntersectionObserverCallback = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement
+          const targetIndex = mapping[target.id]
+
+          if (!this.isImperativelyNavigating()) {
+            this.activateLink(targetIndex, true)
+          }
+
+          this.isImperativelyNavigating.set(targetIndex !== this.activeIndex())
+        }
+      })
+    }
+
+    const scrollSentinelCallback: IntersectionObserverCallback = entries => {
+      entries.forEach(entry => {
+        this.smallHeader.set(!entry.isIntersecting)
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, { rootMargin: '-50%' })
+    const observer2 = new IntersectionObserver(scrollSentinelCallback, { rootMargin: '-10%' })
+
+    if (heroSection) observer.observe(heroSection)
+    if (expertiseSection) observer.observe(expertiseSection)
+    if (faqSection) observer.observe(faqSection)
+
+    if (scrollSentinel) observer2.observe(scrollSentinel)
   }
 }

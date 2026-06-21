@@ -1,54 +1,39 @@
 <header class="adv-header">
   <img
     class="adv-header__logo"
-    ngSrc="images/logo.png"
-    width="90"
-    height="40"
-    sizes="100vw"
+    src="images/logo.png"
     alt="Logo da Samantha"
   >
 
-  <nav
-    class="nav-menu"
-    /* (mouseleave)="onNavBlur()" */
-  >
-    <div
-      class="nav-menu__indicator"
-      [style.width.px]="indicatorCoords().w"
-      [style.left.px]="indicatorCoords().x"
-    ></div>
-
+  <nav class="nav-menu">
     <ul class="nav-menu__list">
       <li class="nav-menu__item">
         <a
-          href="#home"
+          href="#hero-section"
           class="nav-menu__link"
           [class.nav-menu__link--active]="activeIndex() === 1"
+          (click)="activateLink(1)"
           data-index="1"
-          /* (mouseenter)="onLinkHover($event)" */
-          (click)="onLinkClick($event)"
         > Home </a>
       </li>
 
       <li class="nav-menu__item">
         <a
-          href="#servicos"
+          href="#expertise-section"
           class="nav-menu__link"
           [class.nav-menu__link--active]="activeIndex() === 2"
+          (click)="activateLink(2)"
           data-index="2"
-          /* (mouseenter)="onLinkHover($event)" */
-          (click)="onLinkClick($event)"
         > Serviços </a>
       </li>
 
       <li class="nav-menu__item">
         <a
-          href="#duvidas"
+          href="#faq-section"
           class="nav-menu__link"
           [class.nav-menu__link--active]="activeIndex() === 3"
+          (click)="activateLink(3)"
           data-index="3"
-          /* (mouseenter)="onLinkHover($event)" */
-          (click)="onLinkClick($event)"
         > Dúvidas </a>
       </li>
 
@@ -57,9 +42,8 @@
           href="#contato"
           class="nav-menu__link"
           [class.nav-menu__link--active]="activeIndex() === 4"
+          (click)="activateLink(4)"
           data-index="4"
-          /* (mouseenter)="onLinkHover($event)" */
-          (click)="onLinkClick($event)"
         > Contato </a>
       </li>
     </ul>
@@ -92,24 +76,27 @@
     <ul class="mobile-nav-menu__list">
       <li class="mobile-nav-menu__item">
         <a
-          href="#home"
+          href="#hero-section"
           class="mobile-nav-menu__link"
+          [class.mobile-nav-menu__link--active]="activeIndex() === 1"
           (click)="closePopover()"
         > Home </a>
       </li>
 
       <li class="mobile-nav-menu__item">
         <a
-          href="#servicos"
+          href="#expertise-section"
           class="mobile-nav-menu__link"
+          [class.mobile-nav-menu__link--active]="activeIndex() === 2"
           (click)="closePopover()"
         > Serviços </a>
       </li>
 
       <li class="mobile-nav-menu__item">
         <a
-          href="#duvidas"
+          href="#faq-section"
           class="mobile-nav-menu__link"
+          [class.mobile-nav-menu__link--active]="activeIndex() === 3"
           (click)="closePopover()"
         > Dúvidas </a>
       </li>
@@ -118,6 +105,7 @@
         <a
           href="#contato"
           class="mobile-nav-menu__link"
+          [class.mobile-nav-menu__link--active]="activeIndex() === 4"
           (click)="closePopover()"
         > Contato </a>
       </li>
