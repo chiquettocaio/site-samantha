@@ -17,11 +17,11 @@
   overflow: hidden;
   max-width: var(--max-content-width);
   margin: 0 auto;
-  height: 70px;
+  height: 80px;
   transition: all .2s ease;
 
   &__logo {
-    width: 120px;
+    width: 130px;
   }
 }
 
@@ -154,7 +154,7 @@
   &__link {
     position: relative;
     font-family: var(--font-family-cabin);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-lg);
     color: var(--color-neutral-darker);
     border-bottom: 2px solid transparent;
     text-decoration: none;
@@ -193,14 +193,14 @@
       box-shadow: 1px 1px 4px 0 #dad7d7;
 
       .adv-header {
-        height: 60px;
+        height: 80px;
         animation-name: slide-top;
         animation-duration: .5s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards;
 
         &__logo {
-          width: 120px;
+          width: 140px;
         }
       }
 
@@ -221,10 +221,10 @@
   }
 
   .adv-header {
-    height: 80px;
+    height: 100px;
 
     &__logo {
-      width: 150px;
+      width: 170px;
     }
   }
 }

@@ -13,7 +13,8 @@ import {
   customFemale,
   customHourGlass,
   customRedo,
-  customSentimentCalm
+  customSentimentCalm,
+  customWhatsappIcon
 } from './custom-icons'
 
 @Component({
@@ -32,7 +33,8 @@ import {
       customFemale,
       customHourGlass,
       customRedo,
-      customSentimentCalm
+      customSentimentCalm,
+      customWhatsappIcon
     })
   ],
   templateUrl: './icon.html',

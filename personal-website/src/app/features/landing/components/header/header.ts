@@ -1,7 +1,5 @@
 import { Component, DOCUMENT, ElementRef, inject, OnInit, signal, viewChild } from '@angular/core'
 
-// TODOCH: either remove or use the commented code
-
 @Component({
   selector: 'app-header',
   imports: [],
