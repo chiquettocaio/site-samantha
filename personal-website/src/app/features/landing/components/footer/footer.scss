@@ -1,5 +1,67 @@
+@use 'tokens/breakpoints' as breakpoints;
+
 .adv-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
   width: 100%;
-  height: 400px;
-  background: lightgrey;
+  padding: 40px 20px 20px;
+  background-color: var(--color-grey-1);
+  box-shadow: 1px 1px 4px 0 #dad7d7;
+  font-family: var(--font-family-cabin);
+  color: var(--color-neutral-darkest);
+
+  &__logo {
+    width: 100%;
+    max-width: 50px;
+    margin-top: 32px;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    width: 100%;
+    border-top: 1px solid;
+    padding-top: 20px;
+    font-size: var(--font-size-base);
+    text-align: center;
+  }
+}
+
+.service-list-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  &__title {
+    font-size: var(--font-size-4xl);
+    font-family: var(--font-family-lobster);
+    margin-bottom: 18px;
+    font-weight: var(--font-weight-regular);
+  }
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  font-size: var(--font-size-lg);
+}
+
+@media screen and (width > breakpoints.$bp-md) {
+  .adv-footer {
+    &__logo {
+      max-width: 50px;
+    }
+  }
 }
