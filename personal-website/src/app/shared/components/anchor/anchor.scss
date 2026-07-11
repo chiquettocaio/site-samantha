@@ -1,0 +1,64 @@
+:host {
+  width: 100%;
+}
+
+a {
+  --button-color: var(--color-accent);
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 24px;
+  border-radius: 8px;
+  background-color: var(--button-color);
+  font-family: var(--font-family-cabin);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  border: none;
+  box-shadow: 0 2px 4px rgb(from var(--color-black) r g b / .25);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    translate .2s ease,
+    box-shadow .2s ease;
+
+  &:active {
+    box-shadow: unset;
+    translate: 0 2px;
+  }
+
+  &.secondary {
+    --button-color: hsl(from var(--color-black) h s calc(l + 95));
+
+    background-color: var(--button-color);
+    color: var(--color-neutral-darkest);
+  }
+
+  &.tertiary {
+    --button-color: none;
+
+    background: none;
+    color: var(--color-black);
+    box-shadow: none;
+
+    &:active {
+      box-shadow: unset;
+      translate: initial;
+    }
+  }
+
+  &:hover {
+    background-color: hsl(from var(--button-color) h s calc(l + 2));
+  }
+
+  &::ng-deep {
+    [AnchorLeadingIcon],
+    [AnchorTrailingIcon] {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

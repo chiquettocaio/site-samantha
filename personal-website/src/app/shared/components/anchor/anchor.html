@@ -1,0 +1,12 @@
+<a
+  [class.secondary]="variant() === anchorVariant.SECONDARY"
+  [class.tertiary]="variant() === anchorVariant.TERTIARY"
+  [href]="href()"
+  (click)="clicked.emit()"
+  [ariaLabel]="ariaLabel()"
+  [target]="target()"
+>
+  <ng-content select="[AnchorLeadingIcon]" />
+  {{ label() }}
+  <ng-content select="[AnchorTrailingIcon]"/>
+</a>
