@@ -8,10 +8,9 @@
   gap: 32px;
   width: 100%;
   padding: 40px 20px 20px;
-  background-color: var(--color-grey-1);
+  background-color: var(--color-neutral-darker);
   box-shadow: 1px 1px 4px 0 #dad7d7;
   font-family: var(--font-family-cabin);
-  color: var(--color-neutral-darkest);
 
   &__logo {
     width: 100%;
@@ -32,6 +31,7 @@
     border-top: 1px solid;
     padding-top: 20px;
     font-size: var(--font-size-base);
+    color: var(--color-neutral-lightest);
     text-align: center;
   }
 }
@@ -41,6 +41,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  color: var(--color-neutral-lightest);
 
   &__title {
     font-size: var(--font-size-4xl);

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core'
-import { Button } from '../../../shared/components/button/button'
+import { Anchor } from '../../../shared/components/anchor/anchor'
 import { ButtonVariant } from '../../../shared/components/button/button.model'
 
 @Component({
   selector: 'app-book-appointment',
-  imports: [Button],
+  imports: [Anchor],
   templateUrl: './book-appointment.html',
   styleUrl: './book-appointment.scss'
 })
