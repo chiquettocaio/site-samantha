@@ -49,6 +49,10 @@ export class Expertise implements AfterViewInit {
         opacity: 0,
         y: -20
       }, '<0.2')
+      .to('#expertise-section .expertise-subsection--protection .expertise-subsection__subtitle .gsap-highlight', {
+        backgroundPositionX: '0',
+        stagger: 0.4
+      })
       .from('#expertise-section .expertise-subsection--protection .expertise-subsection-card', {
         opacity: 0,
         y: 50,
@@ -101,7 +105,7 @@ export class Expertise implements AfterViewInit {
         opacity: 0,
         y: -20
       }, '<0.2')
-      .to('#expertise-section .expertise-subsection--services .expertise-subsection__subtitle .gsap-decorate', {
+      .to('#expertise-section .expertise-subsection--services .expertise-subsection__subtitle .gsap-highlight', {
         backgroundPositionX: '0',
         stagger: 0.1
       })
@@ -110,8 +114,7 @@ export class Expertise implements AfterViewInit {
       scrollTrigger: {
         trigger: '#expertise-section .expertise-subsection--services .expertise-subsection-cards',
         start: 'top 70%',
-        end: 'top 20%',
-        markers: true
+        end: 'top 20%'
       }
     }).from('#expertise-section .expertise-subsection--services .expertise-subsection-card', {
       opacity: 0,

@@ -1,4 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core'
+import { isPlatformBrowser } from '@angular/common'
+import { AfterViewInit, Component, inject, PLATFORM_ID } from '@angular/core'
 import { gsap } from 'gsap'
 import { Anchor } from '../../../shared/components/anchor/anchor'
 import { ButtonVariant } from '../../../shared/components/button/button.model'
@@ -10,10 +11,14 @@ import { ButtonVariant } from '../../../shared/components/button/button.model'
   styleUrl: './book-appointment.scss'
 })
 export class BookAppointment implements AfterViewInit {
+  private readonly platformId = inject(PLATFORM_ID)
+
   ButtonVariant = ButtonVariant
 
   ngAfterViewInit (): void {
-    this.startAnimation()
+    if (isPlatformBrowser(this.platformId)) {
+      this.startAnimation()
+    }
   }
 
   startAnimation (): void {
