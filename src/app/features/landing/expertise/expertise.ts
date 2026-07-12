@@ -116,14 +116,15 @@ export class Expertise implements AfterViewInit {
         start: 'top 70%',
         end: 'top 20%'
       }
-    }).from('#expertise-section .expertise-subsection--services .expertise-subsection-card', {
-      opacity: 0,
-      x: (index, target, array) => {
-        const fromLeft = index % 2 === 0
-        return fromLeft ? -50 : 50
-      },
-      stagger: 0.2
     })
+      .from('#expertise-section .expertise-subsection--services .expertise-subsection-card', {
+        opacity: 0,
+        stagger: 0.2,
+        x: (index, target, array) => {
+          const fromLeft = index % 2 === 0
+          return fromLeft ? -50 : 50
+        }
+      })
 
     const cardTitles = '#expertise-section .expertise-subsection--services .expertise-subsection-card .expertise-subsection-card__title'
     gsap.utils.toArray<HTMLElement>(cardTitles).forEach((title, i) => {
