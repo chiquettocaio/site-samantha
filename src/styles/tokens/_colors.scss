@@ -13,11 +13,17 @@
   --color-black: #000000;
 
   --color-blue: #0d69d1;
-  --color-accent: #28A745;
+  --color-accent: #25953f;
   --color-warning: #FDB92F;
   --color-danger: #E84B4B;
   --color-pink: #ff42b0;
-  --color-golden: #b4966b;
+  --color-golden: #8B6E46;
 
   --color-text: var(--color-neutral-darkest);
+
+  --color-bg-dark: #1d0606;
+  // --color-bg-dark: #29282d;
+  --color-text-light: #F4F4F9;
+  --color-bg-light: var(--color-neutral-lightest);
+  --color-text-dark: var(--color-neutral-darkest);
 }

@@ -1,13 +1,13 @@
 @use './styles/index';
 
-html, body, main {
+html, body {
   width: 100dvw;
   height: 100dvh;
   font-family: var(--font-family-cabin);
   color: var(--color-black);
   scroll-behavior: smooth;
   scroll-padding: 40px;
-  background-color: var(--color-neutral-lightest);
+  background-color: var(--color-bg-light);
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html, body, main {
+  html, body {
     scroll-behavior: initial;
   }
 }
