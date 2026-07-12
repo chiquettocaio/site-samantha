@@ -42,7 +42,7 @@
     line-height: 150%;
     color: var(--color-text);
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
   }
 
   &__ctas {
@@ -57,7 +57,7 @@
 
 @media screen and (width > breakpoints.$bp-md) {
   :host {
-    padding: 0 40px;
+    padding: 64px 40px 0;
   }
 
   .book-appointment-section {

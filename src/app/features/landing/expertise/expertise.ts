@@ -117,7 +117,7 @@ export class Expertise implements AfterViewInit {
         trigger: '#expertise-section .expertise-subsection--services .expertise-subsection-cards',
         start: 'top 85%',
         end: 'top 20%',
-        scrub: 3
+        scrub: 10
       }
     })
       .from('#expertise-section .expertise-subsection--services .expertise-subsection-card', {

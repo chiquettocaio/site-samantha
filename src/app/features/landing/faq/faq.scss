@@ -11,7 +11,6 @@
   justify-content: center;
   margin: 0 auto;
   padding: 64px 20px;
-  max-width: var(--max-content-width);
 
   &__title {
     font-family: var(--font-family-lobster);
@@ -34,6 +33,12 @@
   }
 }
 
+.faq-section-content {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
 .faq {
   display: grid;
   gap: 0 48px;
@@ -54,9 +59,9 @@
   width: 100%;
 
   &__icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 20px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 6px;
   }
 
   &__title {
@@ -123,6 +128,13 @@
 
     &__subtitle {
       font-size: var(--font-size-lg);
+    }
+  }
+
+  .faq-item {
+    &__icon {
+      width: 48px;
+      height: 48px;
     }
   }
 
