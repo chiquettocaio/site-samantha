@@ -37,9 +37,6 @@ export class Header implements OnInit {
   }
 
   private initIntersectionObserver (): void {
-    const isMobile = window.innerWidth <= 768
-    if (isMobile) return
-
     const heroSection = this.document.querySelector('#hero-section')
     const expertiseSection = this.document.querySelector('#expertise-section')
     const faqSection = this.document.querySelector('#faq-section')
@@ -76,13 +73,15 @@ export class Header implements OnInit {
     }
 
     const observer = new IntersectionObserver(observerCallback, { rootMargin: '-50%' })
-    const observer2 = new IntersectionObserver(scrollSentinelCallback, { rootMargin: '-10%' })
-
     if (heroSection) observer.observe(heroSection)
     if (expertiseSection) observer.observe(expertiseSection)
     if (faqSection) observer.observe(faqSection)
     if (contactSection) observer.observe(contactSection)
 
+    const isMobile = window.innerWidth <= 768
+    if (isMobile) return
+
+    const observer2 = new IntersectionObserver(scrollSentinelCallback, { rootMargin: '-10%' })
     if (scrollSentinel) observer2.observe(scrollSentinel)
   }
 }
