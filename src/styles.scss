@@ -1,6 +1,6 @@
 @use './styles/index';
 
-html, body, main {
+html, body {
   width: 100dvw;
   height: 100dvh;
   font-family: var(--font-family-cabin);
@@ -16,7 +16,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html, body, main {
+  html, body {
     scroll-behavior: initial;
   }
 }
