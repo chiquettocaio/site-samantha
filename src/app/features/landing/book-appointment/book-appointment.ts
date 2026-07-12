@@ -25,8 +25,9 @@ export class BookAppointment implements AfterViewInit {
     gsap.timeline({
       scrollTrigger: {
         trigger: '#book-appointment-section',
-        start: 'top 70%',
-        end: 'top 20%'
+        start: 'top 85%',
+        end: 'top 20%',
+        scrub: 3
       }
     })
       .from('#book-appointment-section', {

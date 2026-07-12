@@ -31,8 +31,9 @@ export class Expertise implements AfterViewInit {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: '#expertise-section',
-        start: 'top 70%',
-        end: 'top 20%'
+        start: 'top 85%',
+        end: 'top 20%',
+        scrub: 3
       }
     })
       .to('#expertise-section .expertise-subsection--protection .expertise-subsection__identifier', {
@@ -56,7 +57,7 @@ export class Expertise implements AfterViewInit {
       .from('#expertise-section .expertise-subsection--protection .expertise-subsection-card', {
         opacity: 0,
         y: 50,
-        stagger: 0.2
+        stagger: 0.1
       }, '<0.2')
 
     const cardIcons = '#expertise-section .expertise-subsection--protection .expertise-subsection-card .expertise-subsection-card__image'
@@ -87,8 +88,9 @@ export class Expertise implements AfterViewInit {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: '.expertise-subsection--services',
-        start: 'top 70%',
-        end: 'top 20%'
+        start: 'top 85%',
+        end: 'top 20%',
+        scrub: 3
       }
     })
       .to('#expertise-section .expertise-subsection--services .expertise-subsection__identifier', {
@@ -113,13 +115,14 @@ export class Expertise implements AfterViewInit {
     gsap.timeline({
       scrollTrigger: {
         trigger: '#expertise-section .expertise-subsection--services .expertise-subsection-cards',
-        start: 'top 70%',
-        end: 'top 20%'
+        start: 'top 85%',
+        end: 'top 20%',
+        scrub: 3
       }
     })
       .from('#expertise-section .expertise-subsection--services .expertise-subsection-card', {
         opacity: 0,
-        stagger: 0.2,
+        stagger: 0.1,
         x: (index, target, array) => {
           const fromLeft = index % 2 === 0
           return fromLeft ? -50 : 50

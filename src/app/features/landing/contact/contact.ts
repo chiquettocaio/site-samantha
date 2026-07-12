@@ -22,8 +22,9 @@ export class Contact implements AfterViewInit {
     gsap.timeline({
       scrollTrigger: {
         trigger: '#contact-section',
-        start: 'top 70%',
-        end: 'top 20%'
+        start: 'top 85%',
+        end: 'top 20%',
+        scrub: 3
       }
     })
       .to('#contact-section .contact-section__identifier', {

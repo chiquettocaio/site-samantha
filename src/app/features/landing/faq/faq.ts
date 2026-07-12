@@ -26,8 +26,9 @@ export class Faq implements AfterViewInit {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: '#faq-section',
-        start: 'top 90%',
-        end: 'top 20%'
+        start: 'top 85%',
+        end: 'top 20%',
+        scrub: 3
       }
     })
       .from('#faq-section .faq-section__title', {
@@ -68,7 +69,8 @@ export class Faq implements AfterViewInit {
       scrollTrigger: {
         trigger: '.needs-more-guidance',
         start: 'top 85%',
-        end: 'top 20%'
+        end: 'top 20%',
+        scrub: 3
       }
     }).to('.needs-more-guidance .gsap-highlight', {
       backgroundPositionX: '0',
