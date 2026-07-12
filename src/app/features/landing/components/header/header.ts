@@ -37,6 +37,9 @@ export class Header implements OnInit {
   }
 
   private initIntersectionObserver (): void {
+    const isMobile = window.innerWidth <= 768
+    if (isMobile) return
+
     const heroSection = this.document.querySelector('#hero-section')
     const expertiseSection = this.document.querySelector('#expertise-section')
     const faqSection = this.document.querySelector('#faq-section')
