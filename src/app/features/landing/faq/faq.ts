@@ -25,29 +25,32 @@ export class Faq implements AfterViewInit {
   startAnimation (): void {
     const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: '#faq-section',
+        trigger: '#faq-section .faq-section__subtitle',
         start: 'top 85%',
-        end: 'top 20%',
+        end: 'top 10%',
         scrub: 3
       }
     })
       .from('#faq-section .faq-section__title', {
         clipPath: 'inset(0 100% 0 0)',
         ease: 'sine.out',
-        duration: 2
+        duration: 100
       })
       .from('#faq-section .faq-section__subtitle', {
         opacity: 0,
-        y: -20
-      }, '-=0.5')
+        y: -20,
+        duration: 25
+      })
       .to('#faq-section .faq-section__subtitle .gsap-highlight', {
         backgroundPositionX: '0',
-        stagger: 0.4
+        stagger: 5,
+        duration: 50
       })
       .from('#faq-section .faq .faq-item', {
         opacity: 0,
         y: 50,
-        stagger: 0.2,
+        stagger: 20,
+        duration: 50,
         ease: 'power3.inOut'
       }, '<0.2')
 
@@ -59,9 +62,9 @@ export class Faq implements AfterViewInit {
             y: -10,
             yoyo: true,
             repeat: 1,
-            duration: 0.2
+            duration: 60
           }),
-        '-=0.2'
+        '<'
       )
     })
 
@@ -77,7 +80,7 @@ export class Faq implements AfterViewInit {
       stagger: 0.2
     })
       .from('.needs-more-guidance app-anchor', {
-        y: 100, // Sai de 100px abaixo
+        y: 100,
         opacity: 0,
         ease: 'back.out(2)'
       })
