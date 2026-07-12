@@ -1,4 +1,6 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { BookAppointment } from './features/landing/book-appointment/book-appointment'
 import { Footer } from './features/landing/components/footer/footer'
 import { Header } from './features/landing/components/header/header'
@@ -21,4 +23,12 @@ import { Hero } from './features/landing/hero/hero'
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {}
+export class App implements OnInit {
+  ngOnInit (): void {
+    this.registerGsapPlugins()
+  }
+
+  private registerGsapPlugins (): void {
+    gsap.registerPlugin(ScrollTrigger)
+  }
+}
