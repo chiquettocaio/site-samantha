@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 20px 18px 10px;
+  padding: 18px 20px 18px;
   overflow: hidden;
   max-width: var(--max-content-width);
   margin: 0 auto;
@@ -221,6 +221,7 @@
 
   .adv-header {
     height: 100px;
+    padding: 18px 30px 18px 10px;
 
     &__logo {
       width: 170px;
